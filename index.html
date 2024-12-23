@@ -14,113 +14,131 @@
   <script>
     // In CHALLENGEs 1-9 you will flesh out some functions
 
-    // To do this, translate each 🧠 set of instructions into a working function
-    // ❗ Functions are scaffolded for you, but some of them are missing their parameters
-    // ❗ Watch the Guided Project to learn proper debugging technique
+    // To do this, translate each set of instructions into a working function
+    //  Functions are scaffolded for you, but some of them are missing their parameters
+    //  Watch the Guided Project to learn proper debugging technique
 
-    // 👉 CHALLENGE 1
-    // 🧠 The function buildPeter builds an object of a certain shape and returns it.
-    // 🧠 Example of usage:
+    // CHALLENGE 1
+    //  The function buildPeter builds an object of a certain shape and returns it.
+    //  Example of usage:
     // buildPeter() // should return { firstName: "Peter", lastName: "Pan", age: 12 }
     function buildPeter() {
-
+      return { firstName: "Peter", lastName: "Pan", age: 12 };
     }
 
-    // 👉 CHALLENGE 2
-    // 🧠 The function buildUser takes three arguments and uses them to build an object and return it.
-    // 🧠 Example of usage:
+    // CHALLENGE 2
+    //  The function buildUser takes three arguments and uses them to build an object and return it.
+    //  Example of usage:
     // buildUser("John", "Smith", 30) // should return { firstName: "John", lastName: "Smith", age: 30 }
     function buildUser(firstName, lastName, age) {
-
+      return { firstName, lastName, age };
     }
 
-    // 👉 CHALLENGE 3
-    // 🧠 The function deletePrice takes an object as its argument and deletes its "price" property if it exists.
-    // 🧠 If on the other hand there is no "price" property on the object, a "priceless" property with a value of true is added to it.
-    // 🧠 After the modification of the object, it is returned.
-    // 🧠 Note that the argument of the function is missing, you must write it.
-    // 🧠 Examples of usage:
+    // CHALLENGE 3
+    //  The function deletePrice takes an object as its argument and deletes its "price" property if it exists.
+    //  If on the other hand there is no "price" property on the object, a "priceless" property with a value of true is added to it.
+    //  After the modification of the object, it is returned.
+    //  Note that the argument of the function is missing, you must write it.
+    //  Examples of usage:
     // deletePrice({ item: "Tesla Model 3", price: 40000 }) // should return { item: "Tesla Model 3" }
     // deletePrice({ item: "Kobo Libra 2" }) // should return { item: "Kobo Libra 2", priceless: true }
-    function deletePrice() {
-
+    function deletePrice(obj) {
+      if ('price' in obj) {
+        delete obj.price;
+      } else {
+        obj.priceless = true;
+      }
+      return obj;
     }
 
-    // 👉 CHALLENGE 4
-    // 🧠 The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
-    // 🧠 Note that the argument of the function is missing, you must write it.
-    // 🧠 Examples of usage:
+    // CHALLENGE 4
+    //  The function evenList takes an array as its argument and returns true if the array has an even number of elements, false otherwise.
+    //  Note that the argument of the function is missing, you must write it.
+    //  Examples of usage:
     // evenList(['a']) // should return false
     // evenList(['a', 'b']) // should return true
     function evenList(arr) {
-
+      return arr.length % 2 === 0;
     }
 
-    // 👉 CHALLENGE 5
-    // 🧠 The function firstOrLast takes an array as the first argument, and a Boolean as the second.
-    // 🧠 If the Boolean is true, the function returns the first element of the array, otherwise the last one.
-    // 🧠 Examples of usage:
+    // CHALLENGE 5
+    //  The function firstOrLast takes an array as the first argument, and a Boolean as the second.
+    //  If the Boolean is true, the function returns the first element of the array, otherwise the last one.
+    //  Examples of usage:
     // firstOrLast(['a', 'b'], true) // should return 'a'
     // firstOrLast(['a', 'b'], false) // should return 'b'
-    function firstOrLast() {
-
+    function firstOrLast(arr, isFirst) {
+      return isFirst ? arr[0] : arr[arr.length - 1];
     }
 
-    // 👉 CHALLENGE 6
-    // 🧠 The function pushElement takes an array as the first argument, and any value we wish as the second.
-    // 🧠 The function adds the given value as the last element of the array, and then returns the whole array.
-    // 🧠 Examples of usage:
+    // CHALLENGE 6
+    //  The function pushElement takes an array as the first argument, and any value we wish as the second.
+    //  The function adds the given value as the last element of the array, and then returns the whole array.
+    //  Examples of usage:
     // pushElement([], 1) // should return [1]
     // pushElement(['a', 'b'], 'c') // should return ['a', 'b', 'c']
-    function pushElement() {
-
+    function pushElement(arr, element) {
+      arr.push(element);
+      return arr;
     }
 
-    // 👉 CHALLENGE 7
-    // 🧠 The function stripX takes a string as its argument.
-    // 🧠 The function strips any occurrences of the letter "x" from the string and returns the resulting string.
-    // 🧠 Examples of usage:
+    // CHALLENGE 7
+    //  The function stripX takes a string as its argument.
+    //  The function strips any occurrences of the letter "x" from the string and returns the resulting string.
+    //  Examples of usage:
     // stripX("xenomorph") // should return "enomorph"
     // stripX("paradox") // should return "parado"
-    // ❗ Important Hints:
-    // 🧠 Inside the function, we should split the given string into an array of characters. Example: "foo".split("") yields ["f", "o", "o"]
-    // 🧠 Do not attempt to manipulate the array of characters. Create an empty result array, and populate it by looping over the characters.
-    // 🧠 At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
-    // 🧠 You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
-    // 🧠 Do not forget to return your rejoined string!
-    function stripX() {
-
+    //  Important Hints:
+    //  Inside the function, we should split the given string into an array of characters. Example: "foo".split("") yields ["f", "o", "o"]
+    //  Do not attempt to manipulate the array of characters. Create an empty result array, and populate it by looping over the characters.
+    //  At each iteration of the loop, if the current character is not "x", then add it to the end of the result array.
+    //  You can merge the result array back into a string by using join. Example: ["f", "o", "o"].join("") yields "foo"
+    //  Do not forget to return your rejoined string!
+    function stripX(str) {
+      let result = [];
+      for (let char of str.split('')) {
+        if (char !== 'x') {
+          result.push(char);
+        }
+      }
+      return result.join('');
     }
 
-    // 👉 CHALLENGE 8
-    // 🧠 The function stripChar takes a string as its first argument and a character as its second argument.
-    // 🧠 The function strips any occurrences of the given character from the string and returns the resulting string.
-    // 🧠 Examples of usage:
+    // CHALLENGE 8
+    //  The function stripChar takes a string as its first argument and a character as its second argument.
+    //  The function strips any occurrences of the given character from the string and returns the resulting string.
+    //  Examples of usage:
     // stripChar("xenomorph", "x") // should return "enomorph"
     // stripChar("paradox", "a") // should return "prdox"
-    // ❗ Important Notes:
-    // 🧠 Try to solve this problem without looking at how you solved the previous one.
-    // 🧠 If you need to look, do not copy & paste code. Take a peek and then work from memory!
-    function stripChar() {
-
+    //  Important Notes:
+    //  Try to solve this problem without looking at how you solved the previous one.
+    //  If you need to look, do not copy & paste code. Take a peek and then work from memory!
+    function stripChar(str, char) {
+      let result = [];
+      for (let c of str.split('')) {
+        if (c !== char) {
+          result.push(c);
+        }
+      }
+      return result.join('');
     }
 
-    // 👉 CHALLENGE 9
-    // 🧠 The function getProps takes an object as its argument.
-    // 🧠 The function returns an array containing the property names of the object.
-    // 🧠 However, if the properties "age" or "married" come up, do not include them in the returned array.
-    // 🧠 Avoid using the delete operator in your implementation. We don't wish to alter the object!
-    // 🧠 Examples of usage:
+    // CHALLENGE 9
+    //  The function getProps takes an object as its argument.
+    //  The function returns an array containing the property names of the object.
+    //  However, if the properties "age" or "married" come up, do not include them in the returned array.
+    //  Avoid using the delete operator in your implementation. We don't wish to alter the object!
+    //  Examples of usage:
     // getProps({ lastName: "Smith", age: 35 }) // should return ["lastName"]
     // getProps({ firstName: "Jane", married: false }) // should return ["firstName"]
     // getProps({ name: "Bamby", favFood: "flowers" }) // should return ["name", "favFood"]
-    function getProps() {
-
+    function getProps(obj) {
+      return Object.keys(obj).filter(prop => prop !== 'age' && prop !== 'married');
     }
 
-    // 🧪 TESTS, do not work below this line
-    // 🧪 TESTS, do not work below this line
-    // 🧪 TESTS, do not work below this line
+    // TESTS, do not work below this line
+    // TESTS, do not work below this line
+    // TESTS, do not work below this line
     runTests('CHALLENGE 1 - buildPeter', buildPeter, [
       [[], { firstName: "Peter", lastName: "Pan", age: 12 }],
     ])
@@ -173,10 +191,10 @@
         results.push([argsList, expected, actual])
       })
       console.log('\n' + testName)
-      if (results.every(result => result[1] === result[2])) console.log('\t✅ All tests pass')
+      if (results.every(result => result[1] === result[2])) console.log('\t All tests pass')
       else results.forEach((result, idx) => {
-        if (result[1] === result[2]) console.log(`\t✅ Test ${idx + 1} passes`)
-        else console.log(`\t❌ Test ${idx + 1} fails: ${func.name}(${result[0]
+        if (result[1] === result[2]) console.log(`\t Test ${idx + 1} passes`)
+        else console.log(`\t Test ${idx + 1} fails: ${func.name}(${result[0]
           .map(JSON.stringify)}) should return ${result[1]} but returns ${result[2]}`)
       })
     }
